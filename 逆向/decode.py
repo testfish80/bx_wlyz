@@ -24,9 +24,7 @@ for file in getFiles("./", '.php'):
     if not isEnc(file):
         continue
     print(file)
-    p = os.popen('php -d extension=/mnt/c/Users/aiyah/Desktop/evalhook/modules/evalhook.so "' + file + '"')
+    p = os.popen('php -d extension=evalhook.so "' + file + '"')
     x = p.read()
     f = open(file, 'w')
     f.write(x)
-
-# php -d extension=/mnt/c/Users/aiyah/Desktop/evalhook/modules/evalhook.so $file
