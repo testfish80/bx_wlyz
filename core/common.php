@@ -28,7 +28,8 @@ spl_autoload_register(["\\core\\lib\\Load", "autoload"]);
 require_once BX_ROOT . "core/function.inc.php";
 require_once BX_ROOT . "core/version.php";
 
-if (!get_magic_quotes_gpc()) {
+//   if (!get_magic_quotes_gpc()) {
+if (!ini_get('magic_quotes_gpc')) {
     if (!empty($_GET)) {
         $_GET = addslashes_deep($_GET);
     }
