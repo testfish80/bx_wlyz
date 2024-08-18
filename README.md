@@ -10,7 +10,7 @@ sudo netfilter-persistent reload
 
 sudo nano /etc/nginx/sites-available/default
 在server模块中，修改或添加以下内容
-location ~ \.php$ {
+location ~ [^/]\.php(/|$) {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/run/php/php8.1-fpm.sock;
     }
