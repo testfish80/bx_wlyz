@@ -9,8 +9,10 @@
 </head>
 <body>
 <h1>
-    <a href="/index.php/admin/Home/show">后台</a>
+    <a href="/index.php/admin/Home/show">管理登录</a>
+   <!--
     <a href="/index.php/agent/Home/show">代理</a>
+    -->
 </h1>
 </body>
 </html>
