@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>用户登陆</title>
+		<title>管理登陆</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo __URL__; ?>public/static/css/bootstrap.min.css" />
 		<script src="<?php echo __URL__; ?>public/static/plugin/iconfont/iconfont.js" type="text/javascript" charset="utf-8"></script>
 		<script src="<?php echo __URL__; ?>public/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -41,27 +41,27 @@
     <div class="input-group-addon"><svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-iconfont"></use>
 </svg></div>
-    <input type="text" class="form-control"  id="username" placeholder="Username">
+    <input type="text" class="form-control"  id="username" placeholder="输入用户名">
   </div>
 			<br />	
   <div class="input-group">
     <div class="input-group-addon"><svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-mima"></use>
 </svg></div>
-    <input type="password" class="form-control" id="password" placeholder="Password">
+    <input type="password" class="form-control" id="password" placeholder="输入密码">
   </div>
   <br />	
   <div class="input-group">
     <div class="input-group-addon"><svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-yanzhengma"></use>
 </svg></div>
-    <input type="text" class="form-control" id="verifycode" placeholder="Verification Code">
+    <input type="text" class="form-control" id="verifycode" placeholder="输入校验码">
     	<img id="vc" src="../../verifycode" onclick="flushCode();"/>
   </div>
 				
 			</div>
 			<div class="card-footer text-muted">
-				<span id="ip">IP地址：<?php echo get_ip(); ?></span>
+				<span id="ip">当前IP地址：<?php echo get_ip(); ?></span>
 				<button  class="btn btn-primary but" onclick="login()" >登录</button>
 			</div>
 		</div>
