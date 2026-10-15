@@ -500,6 +500,7 @@ $("#user_log-tab").one("click",function(){user_log_getpage(1);});
    user_log_lang['user_log_type']['6'] = '解绑';
    user_log_lang['user_log_type']['7'] = '试用';
    user_log_lang['user_log_type']['8'] = '心跳';
+   user_log_lang['user_log_type']['9'] = '断开';  
 	       
 	       
 	       
