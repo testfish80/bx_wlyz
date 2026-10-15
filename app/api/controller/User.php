@@ -297,21 +297,22 @@ class User extends Common
             exit(api_json('1003', '', true));
         }
         if ($data['token'] != $user_res['0']['token']) {
-            $this->log->user($user_res['0']['id'], '8', "Token不一致!");
+            $this->log->user($user_res['0']['id'], '9', "Token不一致!");
             exit(api_json('1004', '', true));
         }
         if ($user_res['0']['heart_beat'] < time()) {
-            $this->log->user($user_res['0']['id'], '8', "Token已过期!");
+            $this->log->user($user_res['0']['id'], '9', "Token已过期!");
             exit(api_json('1008', '', true));
         }
         if ($this->getState() != '3') {
             if ($user_res['0']['endtime'] < time()) {
-                $this->log->user($user_res['0']['id'], '8', "用户到期!");
+                $this->log->user($user_res['0']['id'], '9', "用户到期!");
                 exit(api_json('1005', '', true));
             }
         }
+        
         if ($user_res['0']['state'] == '1') {
-            $this->log->user($user_res['0']['id'], '8', "用户被强制下线!");
+            $this->log->user($user_res['0']['id'], '9', "用户被强制下线!");
             exit(api_json('1007', '', true));
         }
         $user['heart_beat'] = time() + $this->software['0']['heart_time'];
