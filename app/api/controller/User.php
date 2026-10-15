@@ -302,7 +302,7 @@ class User extends Common
             exit(api_json('1003', '', true));
         }
         if ($data['token'] != $user_res['0']['token']) {
-            $this->log->user($user_res['0']['id'], '9', "Token不一致!");
+            $this->log->user($user_res['0']['id'], '8', "Token不一致!");
             exit(api_json('1004', '', true));
         }
         if ($user_res['0']['heart_beat'] < time()) {
