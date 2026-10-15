@@ -149,13 +149,18 @@ class User extends Common
                 exit(api_json('606', '', true));
             }
         }
-        if ($user_res['0']['state'] == '2') {
-            if ($user_res['0']['heart_beat'] >= time()) {
-                if ($this->software['0']['login_type'] == "2" && $user_res['0']['machine_code'] != $data['machine_code'] && $user_res['0']['machine_code'] != '') {
-                    $this->log->user($user_res['0']['id'], '4', "用户在线中 不可登陆!");
-                    exit(api_json('607', '', true));
-                }
-            }
+        if ($user_res['0']['state'] == '2') {  
+            if ($user_res['0']['heart_beat'] >= time()) {  
+                if ($this->software['0']['login_type'] == "2" && $user_res['0']['machine_code'] != $data['machine_code'] && $user_res['0']['machine_code'] != '') {  
+                    $this->log->user($user_res['0']['id'], '4', "用户在线中 不可登陆!");  
+                    exit(api_json('607', '', true));  
+                }  
+                // 同机器顶号，旧会话断开  
+                $this->log->user($user_res['0']['id'], '9', "断开:账号在其他位置登陆!");  
+            } else {  
+                // 上次心跳已超时但未正常退出  
+                $this->log->user($user_res['0']['id'], '9', "断开:上次会话心跳超时!");  
+            }  
         }
         do {
             $token = create_rand_str(20);
